@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydro-Roof Ltd | London Roofing & Liquid Waterproofing Specialists</title>
+    
+    <!-- Google Fonts (Outfit & Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#1E293B',
+                            900: '#0F172A',
+                            950: '#0A0F1D',
+                        },
+                        accent: {
+                            DEFAULT: '#0284C7',
+                            hover: '#0369A1',
+                            cyan: '#06B6D4',
+                            light: '#E0F2FE',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom image comparison slider styles */
+        .ba-slider {
+            position: relative;
+            overflow: hidden;
+            user-select: none;
+            touch-action: pan-y;
+        }
+        .ba-before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            overflow: hidden;
+            width: 50%;
+            z-index: 10;
+            border-right: 2px solid #0284C7;
+        }
+        .ba-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: #0284C7;
+            z-index: 20;
+            cursor: ew-resize;
+            transform: translateX(-50%);
+        }
+        .glass-nav {
+            background: rgba(10, 15, 29, 0.92);
+            backdrop-filter: blur(14px);
+        }
+        /* Custom range slider thumb styling */
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #0284C7;
+            cursor: pointer;
+            border: 3px solid #ffffff;
+            box-shadow: 0 4px 10px rgba(2, 132, 199, 0.5);
+        }
+        input[type=range]::-moz-range-thumb {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #0284C7;
+            cursor: pointer;
+            border: 3px solid #ffffff;
+            box-shadow: 0 4px 10px rgba(2, 132, 199, 0.5);
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-950 text-slate-100 antialiased selection:bg-accent selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-navy-900 via-accent/90 to-navy-900 text-white text-xs sm:text-sm font-medium py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex justify-between items-center flex-wrap gap-2">
+            <div class="flex items-center gap-4 sm:gap-6">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-phone text-accent-cyan"></i> <a href="tel:+442089400000" class="hover:underline font-bold">+44 20 8940 0000</a></span>
+                <span class="hidden md:flex items-center gap-1.5"><i class="fa-solid fa-bolt text-amber-400"></i> <span data-en="24/7 Emergency Leak Hotline" data-pl="Całodobowe Pogotowie Dekarskie 24/7">24/7 Emergency Leak Hotline</span></span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="hidden sm:inline-block text-slate-200" data-en="Richmond • Kingston • Wimbledon • West London" data-pl="Richmond • Kingston • Wimbledon • Zachodni Londyn">Richmond • Kingston • Wimbledon • West London</span>
+                <!-- Language Toggle Switcher -->
+                <button id="langToggle" class="bg-slate-900/80 hover:bg-slate-900 text-white px-3 py-1 rounded-lg text-xs border border-accent/40 transition flex items-center gap-1.5 cursor-pointer font-bold">
+                    <i class="fa-solid fa-globe text-accent-cyan"></i>
+                    <span id="currentLangLabel">EN</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 glass-nav border-b border-slate-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 bg-accent/20 border border-accent/50 rounded-xl flex items-center justify-center group-hover:scale-105 transition duration-300 shadow-md shadow-accent/20">
+                        <i class="fa-solid fa-house-chimney-crack text-accent text-xl relative"></i>
+                        <i class="fa-solid fa-droplet text-accent-cyan text-xs absolute top-2 right-2 animate-bounce"></i>
+                    </div>
+                    <div>
+                        <span class="font-heading font-extrabold text-2xl tracking-tight text-white block leading-none">HYDRO<span class="text-accent">-ROOF</span> <span class="text-xs text-accent-cyan font-normal">LTD</span></span>
+                        <span class="text-[10px] uppercase tracking-widest text-slate-400 font-semibold block mt-1">London Waterproofing Specialists</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-7 font-medium text-sm text-slate-300">
+                    <a href="#services" class="hover:text-accent-cyan transition" data-en="Services" data-pl="Usługi">Services</a>
+                    <a href="#estimator" class="hover:text-accent-cyan transition" data-en="Cost Estimator" data-pl="Kalkulator">Cost Estimator</a>
+                    <a href="#before-after" class="hover:text-accent-cyan transition" data-en="Transformations" data-pl="Metamorfozy">Transformations</a>
+                    <a href="#projects" class="hover:text-accent-cyan transition" data-en="Projects" data-pl="Projekty">Projects</a>
+                    <a href="#testimonials" class="hover:text-accent-cyan transition" data-en="Reviews" data-pl="Opinie">Reviews</a>
+                    <a href="#contact" class="hover:text-accent-cyan transition" data-en="Contact" data-pl="Kontakt">Contact</a>
+                </nav>
+
+                <!-- Action CTAs -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <a href="https://wa.me/442089400000" target="_blank" class="bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 border border-emerald-500/40 text-xs font-semibold px-3 py-2 rounded-xl transition flex items-center gap-1.5">
+                        <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
+                    </a>
+                    <a href="#estimator" class="bg-accent hover:bg-accent-hover text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-lg shadow-accent/25 transition transform hover:-translate-y-0.5" data-en="Get Free Quote" data-pl="Darmowa Wycena">
+                        Get Free Quote
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex lg:hidden">
+                    <button id="mobileMenuBtn" type="button" class="text-slate-300 hover:text-white p-2 text-2xl focus:outline-none">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-navy-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#services" class="mobile-link block px-3 py-2 rounded-md font-medium text-slate-200 hover:bg-slate-800" data-en="Services" data-pl="Usługi">Services</a>
+            <a href="#estimator" class="mobile-link block px-3 py-2 rounded-md font-medium text-slate-200 hover:bg-slate-800" data-en="Cost Estimator" data-pl="Kalkulator">Cost Estimator</a>
+            <a href="#before-after" class="mobile-link block px-3 py-2 rounded-md font-medium text-slate-200 hover:bg-slate-800" data-en="Transformations" data-pl="Metamorfozy">Transformations</a>
+            <a href="#projects" class="mobile-link block px-3 py-2 rounded-md font-medium text-slate-200 hover:bg-slate-800" data-en="Projects" data-pl="Projekty">Projects</a>
+            <a href="#testimonials" class="mobile-link block px-3 py-2 rounded-md font-medium text-slate-200 hover:bg-slate-800" data-en="Reviews" data-pl="Opinie">Reviews</a>
+            <a href="#contact" class="mobile-link block px-3 py-2 rounded-md font-medium text-slate-200 hover:bg-slate-800" data-en="Contact" data-pl="Kontakt">Contact</a>
+            <a href="#estimator" class="mobile-link block text-center bg-accent text-white py-3 rounded-xl font-semibold mt-4" data-en="Get Free Quote" data-pl="Darmowa Wycena">Get Free Quote</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 lg:pt-20 lg:pb-32 overflow-hidden bg-slate-950">
+        <!-- Background Grid Graphic -->
+        <div class="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#0284c7_1px,transparent_1px)] [background-size:28px_28px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/10 border border-accent/30 text-accent-cyan text-xs sm:text-sm font-semibold mb-6">
+                        <span class="flex h-2 w-2 rounded-full bg-accent-cyan animate-ping"></span>
+                        <span data-en="London's Premier Roofing & Liquid Waterproofing Specialists" data-pl="Lider Hydroizolacji Płynnych i Dachów w Londynie">London's Premier Roofing & Liquid Waterproofing Specialists</span>
+                    </div>
+
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-none mb-6">
+                        <span data-en="Guaranteed Roofing &" data-pl="Gwarantowane Usługi">Guaranteed Roofing &</span> <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent via-sky-400 to-accent-cyan" data-en="Cold Liquid Tanking" data-pl="Hydroizolacji Płynnej">Cold Liquid Tanking</span> <br>
+                        <span data-en="Across Greater London" data-pl="W Całym Londynie">Across Greater London</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 mb-8 font-normal leading-relaxed" data-en="Hydro-Roof Ltd provides high-performance seamless liquid membranes, durable EPDM rubber, tile slate roofing, and emergency leak repairs. Backed by 10 to 25 year written guarantees." data-pl="Hydro-Roof Ltd dostarcza bezszwowe powłoki hydroizolacyjne, trwałe membrany EPDM, dachy z łupka i dachówki oraz naprawy awaryjne. Wszystko z pisemną gwarancją od 10 do 25 lat.">
+                        Hydro-Roof Ltd provides high-performance seamless liquid membranes, durable EPDM rubber, tile slate roofing, and emergency leak repairs. Backed by 10 to 25 year written guarantees.
+                    </p>
+
+                    <!-- Hero CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
+                        <a href="#estimator" class="w-full sm:w-auto bg-accent hover:bg-accent-hover text-white font-semibold text-base px-8 py-4 rounded-xl shadow-xl shadow-accent/25 transition transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2" data-en="Calculate Roof Cost" data-pl="Oblicz Koszt Dachu">
+                            <i class="fa-solid fa-calculator"></i> Calculate Roof Cost
+                        </a>
+                        <a href="#contact" class="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold text-base px-8 py-4 rounded-xl transition text-center flex items-center justify-center gap-2" data-en="Request Free Site Survey" data-pl="Zamów Bezpłatny Audyt">
+                            <i class="fa-solid fa-clipboard-check"></i> Request Free Site Survey
+                        </a>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-slate-800/80 pt-8 max-w-2xl mx-auto lg:mx-0">
+                        <div class="flex flex-col items-center lg:items-start">
+                            <i class="fa-solid fa-shield-halved text-accent-cyan text-2xl mb-1.5"></i>
+                            <span class="font-heading font-bold text-white text-sm sm:text-base">10-25 Yrs</span>
+                            <span class="text-xs text-slate-400" data-en="Written Guarantee" data-pl="Pisemna Gwarancja">Written Guarantee</span>
+                        </div>
+                        <div class="flex flex-col items-center lg:items-start">
+                            <i class="fa-solid fa-building-circle-check text-accent text-2xl mb-1.5"></i>
+                            <span class="font-heading font-bold text-white text-sm sm:text-base">£5M Liability</span>
+                            <span class="text-xs text-slate-400" data-en="Fully Insured Ltd" data-pl="Ubezpieczenie OC">Fully Insured Ltd</span>
+                        </div>
+                        <div class="flex flex-col items-center lg:items-start">
+                            <i class="fa-solid fa-certificate text-emerald-400 text-2xl mb-1.5"></i>
+                            <span class="font-heading font-bold text-white text-sm sm:text-base">BBA Certified</span>
+                            <span class="text-xs text-slate-400" data-en="Approved Systems" data-pl="Aprobaty Techniczne">Approved Systems</span>
+                        </div>
+                        <div class="flex flex-col items-center lg:items-start">
+                            <i class="fa-solid fa-bolt text-amber-400 text-2xl mb-1.5"></i>
+                            <span class="font-heading font-bold text-white text-sm sm:text-base">24/7 Response</span>
+                            <span class="text-xs text-slate-400" data-en="Emergency Leaks" data-pl="Szybki Dojazd">Emergency Leaks</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Hero Right Card / Feature Image -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative bg-slate-900 border border-slate-800 rounded-3xl p-4 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=800&q=80" 
+                             alt="Hydro Roof Waterproofing London" 
+                             class="rounded-2xl object-cover w-full h-[360px] sm:h-[440px]"
+                             onerror="this.src='https://placehold.co/800x600/1E293B/ffffff?text=Hydro-Roof+London'">
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute bottom-8 left-8 right-8 bg-navy-900/90 backdrop-blur-md p-4 rounded-2xl border border-slate-700 shadow-xl flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold shrink-0">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </div>
+                                <div>
+                                    <p class="font-heading font-bold text-white text-sm" data-en="Latest Richmond Project" data-pl="Ostatnia Realizacja w Richmond">Latest Richmond Project</p>
+                                    <p class="text-xs text-slate-400" data-en="120m² Seamless Liquid Roof" data-pl="120m² Płynna Membrana">120m² Seamless Liquid Roof</p>
+                                </div>
+                            </div>
+                            <span class="text-emerald-400 font-extrabold text-xs bg-emerald-950/70 border border-emerald-800/60 px-2.5 py-1 rounded-full">PASSED</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Cost Estimator Section -->
+    <section id="estimator" class="py-20 bg-slate-900 border-t border-slate-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <h2 class="text-accent-cyan font-semibold uppercase text-xs sm:text-sm tracking-wider mb-2" data-en="Instant Cost Calculator" data-pl="Natychmiastowy Kalkulator Kosztów">Instant Cost Calculator</h2>
+                <h3 class="font-heading text-3xl sm:text-4xl font-bold text-white" data-en="Interactive Roof Cost Estimator" data-pl="Interaktywny Kalkulator Kosztów Dachu">Interactive Roof Cost Estimator</h3>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base" data-en="Get an instant estimated budget range for your roofing or waterproofing project in London." data-pl="Uzyskaj natychmiastowy szacunkowy kosztorys projektu w Londynie.">Get an instant estimated budget range for your roofing or waterproofing project in London.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 bg-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
+                
+                <!-- Controls Column -->
+                <div class="lg:col-span-7 space-y-8">
+                    
+                    <!-- Step 1: Roof / Service Type -->
+                    <div>
+                        <label class="block font-heading font-semibold text-white text-base sm:text-lg mb-3" data-en="1. Select Roof Service Type" data-pl="1. Wybierz Rodzaj Usługi">1. Select Roof Service Type</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="calcTypeGrid">
+                            <button type="button" data-rate="95" class="calc-type-btn active border-2 border-accent bg-slate-900 text-white p-4 rounded-xl text-left flex items-start gap-3 transition cursor-pointer">
+                                <i class="fa-solid fa-droplet text-accent-cyan text-xl mt-1"></i>
+                                <div>
+                                    <div class="font-semibold text-sm" data-en="Flat Roof Liquid Tanking" data-pl="Płynna Hydroizolacja Dachu">Flat Roof Liquid Tanking</div>
+                                    <div class="text-xs text-slate-400 mt-0.5" data-en="Cold-applied polyurethane system" data-pl="Poliuretanowa powłoka na zimno">Cold-applied polyurethane system</div>
+                                </div>
+                            </button>
+                            <button type="button" data-rate="80" class="calc-type-btn border-2 border-slate-800 bg-slate-900/60 text-slate-300 p-4 rounded-xl text-left flex items-start gap-3 hover:border-slate-700 transition cursor-pointer">
+                                <i class="fa-solid fa-layer-group text-slate-400 text-xl mt-1"></i>
+                                <div>
+                                    <div class="font-semibold text-sm" data-en="EPDM Rubber Roofing" data-pl="Membrana Gumowa EPDM">EPDM Rubber Roofing</div>
+                                    <div class="text-xs text-slate-400 mt-0.5" data-en="Single-ply durable rubber sheet" data-pl="Trwała jednowarstwowa guma">Single-ply durable rubber sheet</div>
+                                </div>
+                            </button>
+                            <button type="button" data-rate="120" class="calc-type-btn border-2 border-slate-800 bg-slate-900/60 text-slate-300 p-4 rounded-xl text-left flex items-start gap-3 hover:border-slate-700 transition cursor-pointer">
+                                <i class="fa-solid fa-border-all text-slate-400 text-xl mt-1"></i>
+                                <div>
+                                    <div class="font-semibold text-sm" data-en="Tile / Slate Pitched Roof" data-pl="Dach Skośny Dachówka / Łupek">Tile / Slate Pitched Roof</div>
+                                    <div class="text-xs text-slate-400 mt-0.5" data-en="Natural slate or concrete tiling" data-pl="Łupek naturalny lub dachówka">Natural slate or concrete tiling</div>
+                                </div>
+                            </button>
+                            <button type="button" data-rate="55" class="calc-type-btn border-2 border-slate-800 bg-slate-900/60 text-slate-300 p-4 rounded-xl text-left flex items-start gap-3 hover:border-slate-700 transition cursor-pointer">
+                                <i class="fa-solid fa-wrench text-slate-400 text-xl mt-1"></i>
+                                <div>
+                                    <div class="font-semibold text-sm" data-en="Guttering & Leadwork" data-pl="Orynnowanie i Obróbki Ołowiane">Guttering & Leadwork</div>
+                                    <div class="text-xs text-slate-400 mt-0.5" data-en="High-flow gutters & lead flashings" data-pl="Rynny i pasy nadnadbitkowe">High-flow gutters & lead flashings</div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Surface Area Slider -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="font-heading font-semibold text-white text-base sm:text-lg" data-en="2. Roof Surface Area (m²)" data-pl="2. Powierzchnia Dachu (m²)">2. Roof Surface Area (m²)</label>
+                            <span class="text-accent-cyan font-bold text-xl bg-accent/10 px-3.5 py-1 rounded-xl border border-accent/30"><span id="calcAreaVal">50</span> m²</span>
+                        </div>
+                        <input id="calcAreaSlider" type="range" min="10" max="250" value="50" class="w-full h-2.5 bg-slate-800 rounded-lg appearance-none cursor-pointer">
+                        <div class="flex justify-between text-xs text-slate-400 mt-2 font-medium">
+                            <span>10 m² (Garage/Extension)</span>
+                            <span>100 m² (Semi-Detached)</span>
+                            <span>250 m² (Large Commercial)</span>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Property Type -->
+                    <div>
+                        <label class="block font-heading font-semibold text-white text-base sm:text-lg mb-3" data-en="3. Select Property Type" data-pl="3. Typ Nieruchomości">3. Select Property Type</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5" id="calcPropertyGrid">
+                            <button type="button" data-mult="1.0" class="calc-prop-btn active border border-accent bg-slate-900 text-white py-3 px-3 rounded-xl font-semibold text-xs sm:text-sm text-center transition cursor-pointer" data-en="Terraced" data-pl="Szeregowiec">Terraced</button>
+                            <button type="button" data-mult="1.1" class="calc-prop-btn border border-slate-800 bg-slate-900/60 text-slate-400 py-3 px-3 rounded-xl font-semibold text-xs sm:text-sm text-center transition hover:border-slate-700 cursor-pointer" data-en="Semi-Detached" data-pl="Bliźniak">Semi-Detached</button>
+                            <button type="button" data-mult="1.2" class="calc-prop-btn border border-slate-800 bg-slate-900/60 text-slate-400 py-3 px-3 rounded-xl font-semibold text-xs sm:text-sm text-center transition hover:border-slate-700 cursor-pointer" data-en="Detached" data-pl="Wolnostojący">Detached</button>
+                            <button type="button" data-mult="1.35" class="calc-prop-btn border border-slate-800 bg-slate-900/60 text-slate-400 py-3 px-3 rounded-xl font-semibold text-xs sm:text-sm text-center transition hover:border-slate-700 cursor-pointer" data-en="Commercial" data-pl="Komercyjny">Commercial</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Dynamic Results Column -->
+                <div class="lg:col-span-5 bg-navy-800/90 border border-slate-700/80 rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-slate-700 pb-4 mb-6">
+                            <span class="text-xs uppercase tracking-wider font-semibold text-slate-400" data-en="Estimated Cost Breakdown" data-pl="Szacowany Kosztorys">Estimated Cost Breakdown</span>
+                            <span class="text-xs bg-slate-950 text-slate-300 px-2.5 py-1 rounded-md font-mono border border-slate-800">GBP (£)</span>
+                        </div>
+
+                        <div class="text-center py-2">
+                            <span class="text-slate-400 text-xs font-medium block mb-1" data-en="Estimated Project Range:" data-pl="Przedział Szacunkowych Kosztów:">Estimated Project Range:</span>
+                            <div class="font-heading font-extrabold text-4xl sm:text-5xl text-white tracking-tight">
+                                £<span id="calcPriceMin">4,275</span> - £<span id="calcPriceMax">5,462</span>
+                            </div>
+                            <span class="text-slate-400 text-xs mt-2 block" data-en="*Includes VAT, premium materials & standard scaffolding allowance" data-pl="*Zawiera VAT, materiały premium i standardowe rusztowanie">*Includes VAT, premium materials & standard scaffolding allowance</span>
+                        </div>
+
+                        <!-- Itemized shares -->
+                        <div class="space-y-3 border-t border-slate-700 pt-6 my-6 text-xs sm:text-sm">
+                            <div class="flex justify-between text-slate-300">
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-cubes text-accent-cyan"></i> <span data-en="Materials & Waterproofing Membrane" data-pl="Materiały i Membrana Hydroizolacyjna">Materials & Waterproofing Membrane</span></span>
+                                <span id="calcMatShare" class="font-semibold text-white">~ £2,137</span>
+                            </div>
+                            <div class="flex justify-between text-slate-300">
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-user-gear text-accent-cyan"></i> <span data-en="Certified Labor & Substrate Prep" data-pl="Certyfikowana Robocizna i Przygotowanie">Certified Labor & Substrate Prep</span></span>
+                                <span id="calcLabShare" class="font-semibold text-white">~ £1,900</span>
+                            </div>
+                            <div class="flex justify-between text-slate-300">
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-shield text-emerald-400"></i> <span data-en="Guarantee Duration" data-pl="Czas Trwania Gwarancji">Guarantee Duration</span></span>
+                                <span class="font-semibold text-emerald-400" data-en="15 to 25 Years" data-pl="Od 15 do 25 Lat">15 to 25 Years</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#contact" id="submitCalcQuoteBtn" class="block w-full text-center bg-accent hover:bg-accent-hover text-white font-semibold py-4 rounded-xl shadow-lg transition transform hover:-translate-y-0.5" data-en="Request Formal Written Quote" data-pl="Zamów Oficjalny Kosztorys">
+                        Request Formal Written Quote
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Before / After Comparison Section -->
+    <section id="before-after" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent-cyan text-xs font-semibold mb-4">
+                        <i class="fa-solid fa-sliders"></i> <span data-en="London Roof Restoration Proof" data-pl="Efekt Metamorfozy Dachu">London Roof Restoration Proof</span>
+                    </div>
+                    <h3 class="font-heading text-3xl sm:text-4xl font-bold text-white mb-4" data-en="Interactive Workmanship Transformation" data-pl="Interaktywny Pokaz Wykonania">Interactive Workmanship Transformation</h3>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6" data-en="Drag the slider on the right to see how Hydro-Roof Ltd transformed a leaking, weather-damaged bitumen roof in Richmond into a 100% waterproof seamless liquid polymer membrane." data-pl="Przesuń suwak po prawej stronie, aby zobaczyć jak Hydro-Roof Ltd przekształcił przeciekający dach w Richmond w 100% szczelną płynną membranę.">
+                        Drag the slider on the right to see how Hydro-Roof Ltd transformed a leaking, weather-damaged bitumen roof in Richmond into a 100% waterproof seamless liquid polymer membrane.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-7 h-7 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center text-xs mt-1 shrink-0"><i class="fa-solid fa-xmark"></i></div>
+                            <div>
+                                <h5 class="font-bold text-white text-sm" data-en="BEFORE: Cracked Felt & Standing Water" data-pl="PRZED: Pęknięta Papa i Stojąca Woda">BEFORE: Cracked Felt & Standing Water</h5>
+                                <p class="text-xs text-slate-400" data-en="Failing traditional felt with thermal degradation and internal moisture ceiling damage." data-pl="Stara papa uległa zniszczeniu, powodując zalanie stropu.">Failing traditional felt with thermal degradation and internal moisture ceiling damage.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs mt-1 shrink-0"><i class="fa-solid fa-check"></i></div>
+                            <div>
+                                <h5 class="font-bold text-white text-sm" data-en="AFTER: Hydro-Roof Seamless Cold Liquid Tanking" data-pl="PO: Płynna Hydroizolacja Hydro-Roof">AFTER: Hydro-Roof Seamless Cold Liquid Tanking</h5>
+                                <p class="text-xs text-slate-400" data-en="Clean UV-reflective liquid polymer coating with a 25-year manufacturer-backed guarantee." data-pl="Czysta, odbijająca UV powłoka polimerowa z 25-letnią gwarancją.">Clean UV-reflective liquid polymer coating with a 25-year manufacturer-backed guarantee.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comparison Box -->
+                <div class="lg:col-span-7">
+                    <div class="relative ba-slider h-[340px] sm:h-[430px] rounded-3xl border border-slate-700 shadow-2xl overflow-hidden" id="baContainer">
+                        
+                        <!-- AFTER IMAGE (Base Layer) -->
+                        <img src="https://images.unsplash.com/photo-1628744876497-eb30460be9f6?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Finished Waterproof Roof" 
+                             class="absolute inset-0 w-full h-full object-cover"
+                             onerror="this.src='https://placehold.co/1200x800/0284C7/ffffff?text=AFTER:+Finished+Hydro-Roof+Membrane'">
+                        <span class="absolute top-4 right-4 bg-emerald-600/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-lg z-0 shadow" data-en="AFTER (Hydro-Roof)" data-pl="PO (Hydro-Roof)">AFTER (Hydro-Roof)</span>
+
+                        <!-- BEFORE IMAGE (Top Clip Layer) -->
+                        <div class="ba-before" id="baBeforeLayer">
+                            <img src="https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?auto=format&fit=crop&w=1200&q=80" 
+                                 alt="Damaged Old Roof" 
+                                 class="absolute top-0 left-0 max-w-none h-full object-cover" id="baBeforeImg">
+                            <span class="absolute top-4 left-4 bg-red-600/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow" data-en="BEFORE (Damaged)" data-pl="PRZED (Uszkodzony)">BEFORE (Damaged)</span>
+                        </div>
+
+                        <!-- SLIDER DRAG HANDLE -->
+                        <div class="ba-handle" id="baHandle">
+                            <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center shadow-xl border-2 border-white">
+                                <i class="fa-solid fa-left-right text-xs"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-accent-cyan font-semibold uppercase text-xs sm:text-sm tracking-wider mb-2" data-en="Our Specialist Services" data-pl="Nasze Usługi Specjalistyczne">Our Specialist Services</h2>
+                <h3 class="font-heading text-3xl sm:text-4xl font-bold text-white" data-en="Comprehensive Roofing & Waterproofing" data-pl="Kompleksowe Usługi Dekarskie">Comprehensive Roofing & Waterproofing</h3>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base" data-en="Engineered waterproofing solutions built for London’s demanding weather conditions." data-pl="Zaawansowane rozwiązania dekarskie przystosowane do brytyjskiej pogody.">Engineered waterproofing solutions built for London’s demanding weather conditions.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="bg-slate-950 border border-slate-800 hover:border-accent/60 rounded-2xl p-8 transition duration-300 hover:-translate-y-1.5 shadow-xl group">
+                    <div class="w-14 h-14 bg-accent/10 border border-accent/30 rounded-2xl flex items-center justify-center text-accent-cyan text-2xl mb-6 group-hover:bg-accent group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-xl text-white mb-3" data-en="Liquid Tanking & Waterproofing" data-pl="Płynna Hydroizolacja Dachów">Liquid Tanking & Waterproofing</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6" data-en="Seamless, cold-applied Polyurethane & PMMA liquid membranes ideal for complex roof geometry, balconies, and flat roofs." data-pl="Bezszwowe systemy poliuretanowe na zimno, idealne dla skomplikowanych krawędzi, balkonów i dachów płaskich.">
+                        Seamless, cold-applied Polyurethane & PMMA liquid membranes ideal for complex roof geometry, balconies, and flat roofs.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 font-medium">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent-cyan"></i> <span data-en="100% Joint-Free & Seamless" data-pl="100% Bezszwowa powłoka">100% Joint-Free & Seamless</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent-cyan"></i> <span data-en="25-Year Manufacturer Guarantee" data-pl="25-letnia gwarancja producenta">25-Year Manufacturer Guarantee</span></li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-slate-950 border border-slate-800 hover:border-accent/60 rounded-2xl p-8 transition duration-300 hover:-translate-y-1.5 shadow-xl group">
+                    <div class="w-14 h-14 bg-accent/10 border border-accent/30 rounded-2xl flex items-center justify-center text-accent-cyan text-2xl mb-6 group-hover:bg-accent group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-xl text-white mb-3" data-en="EPDM Rubber Flat Roofing" data-pl="Dachy Płaskie EPDM">EPDM Rubber Flat Roofing</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6" data-en="High-density EPDM single-ply rubber membrane installations providing UV-resistant and tear-proof protection for residential extensions." data-pl="Montaż trwałych jednowarstwowych membran EPDM odpornych na promieniowanie UV dla domów i rozbudów.">
+                        High-density EPDM single-ply rubber membrane installations providing UV-resistant and tear-proof protection for residential extensions.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 font-medium">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent-cyan"></i> <span data-en="50+ Year Expected Lifespan" data-pl="Trwałość do 50 lat">50+ Year Expected Lifespan</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent-cyan"></i> <span data-en="Clean Flame-Free Installation" data-pl="Bezbezpieczny montaż bez ognia">Clean Flame-Free Installation</span></li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-slate-950 border border-slate-800 hover:border-accent/60 rounded-2xl p-8 transition duration-300 hover:-translate-y-1.5 shadow-xl group">
+                    <div class="w-14 h-14 bg-accent/10 border border-accent/30 rounded-2xl flex items-center justify-center text-accent-cyan text-2xl mb-6 group-hover:bg-accent group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-border-all"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-xl text-white mb-3" data-en="Tile & Slate Pitched Roofs" data-pl="Dachy Skośne z Dachówki i Łupek">Tile & Slate Pitched Roofs</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6" data-en="Full re-roofing and tile repairs using natural Spanish or Welsh slate, concrete interlocking tiles, breathable underlay, and dry ridge systems." data-pl="Wymiana i naprawa dachów z naturalnego łupka walijskiego oraz dachówek betonowych wraz z nową membraną.">
+                        Full re-roofing and tile repairs using natural Spanish or Welsh slate, concrete interlocking tiles, breathable underlay, and dry ridge systems.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 font-medium">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent-cyan"></i> <span data-en="Authentic Welsh & Spanish Slate" data-pl="Oryginalny Łupek Naturalny">Authentic Welsh & Spanish Slate</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent-cyan"></i> <span data-en="Dry Ridge & Dry Verge Upgrade" data-pl="Systemy kalenicowe na sucho">Dry Ridge & Dry Verge Upgrade</span></li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-slate-950 border border-slate-800 hover:border-accent/60 rounded-2xl p-8 transition duration-300 hover:-translate-y-1.5 shadow-xl group">
+                    <div class="w-14 h-14 bg-accent/10 border border-accent/30 rounded-2xl flex items-center justify-center text-accent-cyan text-2xl mb-6 group-hover:bg-accent group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-hammer"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-xl text-white mb-3" data-en="Leadwork & Chimney Flashings" data-pl="Obróbki Ołowiane i Kominy">Leadwork & Chimney Flashings</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6" data-en="Precision Code 4 and Code 5 lead dressing for chimneys, stepped flashings, lead valleys, and masonry repointing." data-pl="Obróbki ołowiane Code 4/5 dla kominów, koszy zjazdowych i spoinowania murów wokół komina.">
+                        Precision Code 4 and Code 5 lead dressing for chimneys, stepped flashings, lead valleys, and masonry repointing.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 font-medium">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent-cyan"></i> <span data-en="BS EN 12588 Certified Lead" data-pl="Certyfikowany Ołów BS EN 12588">BS EN 12588 Certified Lead</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent-cyan"></i> <span data-en="Chimney Stack Repointing" data-pl="Przemurowanie i spoinowanie">Chimney Stack Repointing</span></li>
+                    </ul>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-slate-950 border border-slate-800 hover:border-accent/60 rounded-2xl p-8 transition duration-300 hover:-translate-y-1.5 shadow-xl group">
+                    <div class="w-14 h-14 bg-accent/10 border border-accent/30 rounded-2xl flex items-center justify-center text-accent-cyan text-2xl mb-6 group-hover:bg-accent group-hover:text-white transition duration-300">
+                        <i class="fa-solid fa-water-ladder"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-xl text-white mb-3" data-en="Fascias, Soffits & Guttering" data-pl="Rynny, Podbitki i Podsufitki">Fascias, Soffits & Guttering</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6" data-en="Replacement of damaged timber with heavy-duty UPVC or powder-coated aluminium gutter systems for optimum rain water drainage." data-pl="Wymiana starego drewna na wysokiej jakości rynny uPVC lub aluminiowe zapewniające idealny odpływ wody.">
+                        Replacement of damaged timber with heavy-duty UPVC or powder-coated aluminium gutter systems for optimum rain water drainage.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 font-medium">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent-cyan"></i> <span data-en="High-Capacity Water Flow" data-pl="Wysoka przepustowość rynien">High-Capacity Water Flow</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent-cyan"></i> <span data-en="Low Maintenance uPVC" data-pl="Podbitki i rynny bezobsługowe">Low Maintenance uPVC</span></li>
+                    </ul>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-slate-950 border border-slate-800 hover:border-amber-500/60 rounded-2xl p-8 transition duration-300 hover:-translate-y-1.5 shadow-xl group">
+                    <div class="w-14 h-14 bg-amber-500/10 border border-amber-500/30 rounded-2xl flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-slate-950 transition duration-300">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h4 class="font-heading font-bold text-xl text-white mb-3" data-en="24/7 Emergency Leak Repair" data-pl="Pogotowie Dekarskie 24/7">24/7 Emergency Leak Repair</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6" data-en="Rapid deployment across London for storm damage, active ceiling leaks, blown tiles, and emergency tarpaulin coverage." data-pl="Szybki dojazd w całym Londynie w przypadku zalania, awarii burzowych i pilnych zabezpieczeń plandekami.">
+                        Rapid deployment across London for storm damage, active ceiling leaks, blown tiles, and emergency tarpaulin coverage.
+                    </p>
+                    <ul class="text-xs text-slate-300 space-y-2 font-medium">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> <span data-en="Fast Response Call-Out" data-pl="Szybki czas reakcji">Fast Response Call-Out</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> <span data-en="Thermal Camera Leak Tracing" data-pl="Wykrywanie przecieków termowizją">Thermal Camera Leak Tracing</span></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Gallery Section -->
+    <section id="projects" class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-accent-cyan font-semibold uppercase text-xs sm:text-sm tracking-wider mb-2" data-en="Realized Projects" data-pl="Nasze Realizacje">Realized Projects</h2>
+                <h3 class="font-heading text-3xl sm:text-4xl font-bold text-white" data-en="London Project Gallery" data-pl="Galeria Projektów w Londynie">London Project Gallery</h3>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base" data-en="Explore recent roofing and liquid tanking installations completed across Greater London." data-pl="Zobacz ostatnio ukończone dachy i hydroizolacje na terenie Londynu.">Explore recent roofing and liquid tanking installations completed across Greater London.</p>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12" id="galleryFilters">
+                <button class="gallery-filter-btn active bg-accent text-white font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-xl transition cursor-pointer" data-filter="all" data-en="All Projects" data-pl="Wszystkie">All Projects</button>
+                <button class="gallery-filter-btn bg-slate-900 hover:bg-slate-800 text-slate-300 font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-xl border border-slate-800 transition cursor-pointer" data-filter="flat" data-en="Flat Roofs" data-pl="Dachy Płaskie">Flat Roofs</button>
+                <button class="gallery-filter-btn bg-slate-900 hover:bg-slate-800 text-slate-300 font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-xl border border-slate-800 transition cursor-pointer" data-filter="pitched" data-en="Pitched Roofs" data-pl="Dachy Skośne">Pitched Roofs</button>
+                <button class="gallery-filter-btn bg-slate-900 hover:bg-slate-800 text-slate-300 font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-xl border border-slate-800 transition cursor-pointer" data-filter="repairs" data-en="Repairs & Lead" data-pl="Naprawy i Ołów">Repairs & Lead</button>
+            </div>
+
+            <!-- Gallery Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="galleryGrid">
+                
+                <!-- Project Card 1 -->
+                <div class="gallery-item flat bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl transition hover:-translate-y-1">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Richmond Flat Roof EPDM" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md text-slate-200 text-xs px-3 py-1 rounded-full border border-slate-700"><i class="fa-solid fa-location-dot text-accent-cyan mr-1"></i> Richmond, TW9</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-heading font-bold text-white text-lg mb-1" data-en="Residential Extension EPDM Rubber" data-pl="Dach Płaski EPDM Rozbudowa Domu">Residential Extension EPDM Rubber</h4>
+                        <p class="text-slate-400 text-xs mb-4" data-en="Full stripping of rotted timber decks, install of 18mm OSB, and 1.5mm Firestone EPDM membrane." data-pl="Wymiana płyt OSB i montaż gumowej membrany EPDM z obróbkami aluminium.">Full stripping of rotted timber decks, install of 18mm OSB, and 1.5mm Firestone EPDM membrane.</p>
+                        <div class="flex justify-between items-center pt-3 border-t border-slate-800 text-xs text-slate-400">
+                            <span data-en="Area: 75m² Flat Roof" data-pl="Powierzchnia: 75m²">Area: 75m² Flat Roof</span>
+                            <span class="text-accent-cyan font-semibold" data-en="20 Yr Guarantee" data-pl="20 Lat Gwarancji">20 Yr Guarantee</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="gallery-item flat bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl transition hover:-translate-y-1">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=800&q=80" alt="Kingston Liquid Tanking" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md text-slate-200 text-xs px-3 py-1 rounded-full border border-slate-700"><i class="fa-solid fa-location-dot text-accent-cyan mr-1"></i> Kingston upon Thames, KT1</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-heading font-bold text-white text-lg mb-1" data-en="Balcony & Roof Terrace Liquid Tanking" data-pl="Hydroizolacja Płynna Tarasu">Balcony & Roof Terrace Liquid Tanking</h4>
+                        <p class="text-slate-400 text-xs mb-4" data-en="Cold liquid applied polyurethane coating around complex door thresholds and coping stones." data-pl="Aplikacja powłoki poliuretanowej wokół skomplikowanych krawędzi i drzwi tarasowych.">Cold liquid applied polyurethane coating around complex door thresholds and coping stones.</p>
+                        <div class="flex justify-between items-center pt-3 border-t border-slate-800 text-xs text-slate-400">
+                            <span data-en="Area: 45m² Balcony" data-pl="Powierzchnia: 45m²">Area: 45m² Balcony</span>
+                            <span class="text-accent-cyan font-semibold" data-en="25 Yr Guarantee" data-pl="25 Lat Gwarancji">25 Yr Guarantee</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="gallery-item pitched bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl transition hover:-translate-y-1">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1628744876497-eb30460be9f6?auto=format&fit=crop&w=800&q=80" alt="Wimbledon Slate Roof" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md text-slate-200 text-xs px-3 py-1 rounded-full border border-slate-700"><i class="fa-solid fa-location-dot text-accent-cyan mr-1"></i> Wimbledon, SW19</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-heading font-bold text-white text-lg mb-1" data-en="Heritage Welsh Slate Re-Roof" data-pl="Wymiana Dachu z Łupka">Heritage Welsh Slate Re-Roof</h4>
+                        <p class="text-slate-400 text-xs mb-4" data-en="Complete replacement with Cwt-y-Bugail Welsh slate, treated timber battens, and breathable membrane." data-pl="Kompleksowa wymiana dachu z użyciem walijskiego łupka i nowej membrany.">Complete replacement with Cwt-y-Bugail Welsh slate, treated timber battens, and breathable membrane.</p>
+                        <div class="flex justify-between items-center pt-3 border-t border-slate-800 text-xs text-slate-400">
+                            <span data-en="Area: 135m² Pitched" data-pl="Powierzchnia: 135m²">Area: 135m² Pitched</span>
+                            <span class="text-accent-cyan font-semibold" data-en="25 Yr Guarantee" data-pl="25 Lat Gwarancji">25 Yr Guarantee</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="gallery-item repairs bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl transition hover:-translate-y-1">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=800&q=80" alt="Kensington Leadwork Repair" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md text-slate-200 text-xs px-3 py-1 rounded-full border border-slate-700"><i class="fa-solid fa-location-dot text-accent-cyan mr-1"></i> Kensington, W8</span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-heading font-bold text-white text-lg mb-1" data-en="Chimney Lead Flashing & Pointing" data-pl="Obróbki Ołowiane i Komin">Chimney Lead Flashing & Pointing</h4>
+                        <p class="text-slate-400 text-xs mb-4" data-en="Code 5 lead apron and stepped flashing overhaul with brickwork repointing to stop damp." data-pl="Montaż obróbek z ołowiu Code 5 i spoinowanie komina zapobiegające wilgoci.">Code 5 lead apron and stepped flashing overhaul with brickwork repointing to stop damp.</p>
+                        <div class="flex justify-between items-center pt-3 border-t border-slate-800 text-xs text-slate-400">
+                            <span data-en="Type: Chimney Leadwork" data-pl="Typ: Obróbki Ołowiane">Type: Chimney Leadwork</span>
+                            <span class="text-accent-cyan font-semibold" data-en="15 Yr Guarantee" data-pl="15 Lat Gwarancji">15 Yr Guarantee</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <div class="inline-flex items-center gap-2 bg-slate-950 border border-slate-800 px-4 py-1.5 rounded-full text-xs font-semibold text-amber-400 mb-3">
+                    <i class="fa-brands fa-google"></i> <span>5.0 Star Rated Contractor in London</span>
+                </div>
+                <h3 class="font-heading text-3xl sm:text-4xl font-bold text-white" data-en="Client Reviews & Feedback" data-pl="Opinie Naszych Klientów">Client Reviews & Feedback</h3>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base" data-en="Read verified feedback from homeowners and property developers across London." data-pl="Przeczytaj opinie właścicieli domów w Londynie.">Read verified feedback from homeowners and property developers across London.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Review 1 -->
+                <div class="bg-slate-950 border border-slate-800 p-8 rounded-2xl shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic mb-6 leading-relaxed" data-en="“Hydro-Roof Ltd replaced our leaking garage flat roof in Richmond with seamless liquid waterproofing. They arrived on time, completed the work in a single day, and left the site immaculate.”" data-pl="„Hydro-Roof Ltd wymienił nasz cieknący dach płaski w Richmond na płynną hydroizolację. Zjawili się na czas, ukończyli pracę w jeden dzień i zostawili idealny porządek.”">
+                            “Hydro-Roof Ltd replaced our leaking garage flat roof in Richmond with seamless liquid waterproofing. They arrived on time, completed the work in a single day, and left the site immaculate.”
+                        </p>
+                    </div>
+                    <div class="border-t border-slate-800 pt-4 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-accent/20 text-accent-cyan font-bold flex items-center justify-center text-sm">
+                            DL
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-white text-sm">David Lawson</h5>
+                            <span class="text-xs text-slate-400">Richmond, TW9</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-slate-950 border border-slate-800 p-8 rounded-2xl shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic mb-6 leading-relaxed" data-en="“We had an emergency leak during heavy rain in Wimbledon. Hydro-Roof dispatched a technician within 2 hours, pinpointed the bad flashing, and fixed it straight away. Exceptional service.”" data-pl="„Mieliśmy awaryjny przeciek podczas ulewy w Wimbledon. Hydro-Roof wysłał dekarza w 2 godziny, znaleźli nieszczelność i od razu ją naprawili. Bardzo profesjonalnie.”">
+                            “We had an emergency leak during heavy rain in Wimbledon. Hydro-Roof dispatched a technician within 2 hours, pinpointed the bad flashing, and fixed it straight away. Exceptional service.”
+                        </p>
+                    </div>
+                    <div class="border-t border-slate-800 pt-4 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-accent/20 text-accent-cyan font-bold flex items-center justify-center text-sm">
+                            MK
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-white text-sm">Marek Kowalski</h5>
+                            <span class="text-xs text-slate-400">Wimbledon, SW19</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-slate-950 border border-slate-800 p-8 rounded-2xl shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-300 text-sm italic mb-6 leading-relaxed" data-en="“Top quality Welsh slate re-roofing project in Kingston. The formal quotation was clear with no hidden extras, and the 25-year guarantee certificate arrived right after completion.”" data-pl="„Najwyższa jakość wykonania dachu z łupka w Kingston. Przejrzysta wycena bez ukrytych kosztów i pełny certyfikat gwarancyjny po zakończeniu.”">
+                            “Top quality Welsh slate re-roofing project in Kingston. The formal quotation was clear with no hidden extras, and the 25-year guarantee certificate arrived right after completion.”
+                        </p>
+                    </div>
+                    <div class="border-t border-slate-800 pt-4 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-accent/20 text-accent-cyan font-bold flex items-center justify-center text-sm">
+                            SJ
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-white text-sm">Sarah Jenkins</h5>
+                            <span class="text-xs text-slate-400">Kingston upon Thames, KT1</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Quote Request Section -->
+    <section id="contact" class="py-24 bg-slate-950 border-t border-slate-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info Column -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <h2 class="text-accent-cyan font-semibold uppercase text-xs sm:text-sm tracking-wider mb-2" data-en="Get In Touch" data-pl="Skontaktuj Się Z Nami">Get In Touch</h2>
+                        <h3 class="font-heading text-3xl sm:text-4xl font-bold text-white" data-en="Request Your Free On-Site Roof Survey" data-pl="Zamów Bezpłatny Audyt Dachu">Request Your Free On-Site Roof Survey</h3>
+                        <p class="text-slate-300 mt-4 text-sm sm:text-base leading-relaxed" data-en="Fill in the form or call our London hotline directly. We provide free site inspections, thermal leak diagnostics, and itemized written quotes." data-pl="Wypełnij formularz lub zadzwoń na naszą infolinię w Londynie. Oferujemy bezpłatny audyt i pisemną wycenę.">
+                            Fill in the form or call our London hotline directly. We provide free site inspections, thermal leak diagnostics, and itemized written quotes.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-accent/10 border border-accent/30 text-accent-cyan flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 uppercase font-semibold block" data-en="Phone Line (24/7 Leak Emergency)" data-pl="Telefon (Infolinia 24/7)">Phone Line (24/7 Leak Emergency)</span>
+                                <a href="tel:+442089400000" class="text-white font-bold text-xl hover:text-accent-cyan transition">+44 20 8940 0000</a>
+                                <p class="text-xs text-slate-400 mt-0.5" data-en="Direct London Dispatch Office" data-pl="Bezpośrednie biuro w Londynie">Direct London Dispatch Office</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 uppercase font-semibold block" data-en="WhatsApp Chat" data-pl="Czat WhatsApp">WhatsApp Chat</span>
+                                <a href="https://wa.me/442089400000?text=Hello%20Hydro-Roof%20Ltd,%20I%20would%20like%20a%20free%20roof%20quote." target="_blank" class="text-emerald-400 font-bold text-lg hover:underline">Chat On WhatsApp Now</a>
+                                <p class="text-xs text-slate-400 mt-0.5" data-en="Send roof photos for fast estimates" data-pl="Wyślij zdjęcia dachu dla szybkiej wyceny">Send roof photos for fast estimates</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-accent/10 border border-accent/30 text-accent-cyan flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 uppercase font-semibold block" data-en="Email Address" data-pl="Adres Email">Email Address</span>
+                                <a href="mailto:info@hydro-roof.co.uk" class="text-white font-bold text-lg hover:text-accent-cyan transition">info@hydro-roof.co.uk</a>
+                                <p class="text-xs text-slate-400 mt-0.5" data-en="Official response within 2 business hours" data-pl="Odpowiedź w ciągu 2 godzin">Official response within 2 business hours</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-accent/10 border border-accent/30 text-accent-cyan flex items-center justify-center shrink-0 text-xl">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 uppercase font-semibold block" data-en="Primary Coverage Areas" data-pl="Obsługiwane Dzielnice">Primary Coverage Areas</span>
+                                <p class="text-white font-bold text-sm sm:text-base">Richmond • Kingston • Wimbledon • Kensington • Chelsea • Wandsworth • Ealing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Box -->
+                <div class="lg:col-span-7 bg-slate-900 border border-slate-800 p-8 sm:p-10 rounded-3xl shadow-2xl">
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase mb-2" data-en="Full Name *" data-pl="Imię i Nazwisko *">Full Name *</label>
+                                <input type="text" required id="formName" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent text-sm" placeholder="John Smith">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase mb-2" data-en="Phone Number *" data-pl="Numer Telefonu *">Phone Number *</label>
+                                <input type="tel" required id="formPhone" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent text-sm" placeholder="020 8940 0000">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase mb-2" data-en="Email Address *" data-pl="Adres Email *">Email Address *</label>
+                                <input type="email" required id="formEmail" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent text-sm" placeholder="john@example.com">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase mb-2" data-en="London Postcode *" data-pl="Kod Pocztowy *">London Postcode *</label>
+                                <input type="text" required id="formPostcode" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent text-sm" placeholder="TW9 1AB">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2" data-en="Roof Service Required" data-pl="Wymagana Usługa">Roof Service Required</label>
+                            <select id="formService" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent text-sm">
+                                <option data-en="Flat Roof Liquid Tanking" data-pl="Płynna Hydroizolacja Dachu">Flat Roof Liquid Tanking</option>
+                                <option data-en="EPDM Rubber Flat Roofing" data-pl="Dach Płaski EPDM">EPDM Rubber Flat Roofing</option>
+                                <option data-en="Tile / Slate Pitched Roofing" data-pl="Dach Skośny Dachówka / Łupek">Tile / Slate Pitched Roofing</option>
+                                <option data-en="Emergency Leak Repair 24/7" data-pl="Pogotowie Dekarskie 24/7">Emergency Leak Repair 24/7</option>
+                                <option data-en="Fascias, Soffits & Guttering" data-pl="Rynny i Podbitka">Fascias, Soffits & Guttering</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2" data-en="Project Description / Details" data-pl="Opis Usługi / Szczegóły">Project Description / Details</label>
+                            <textarea id="formMessage" rows="4" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent text-sm" placeholder="Please describe the roof condition or leak issue..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-accent hover:bg-accent-hover text-white font-bold py-4 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 text-center cursor-pointer flex items-center justify-center gap-2" data-en="Submit Free Survey Request" data-pl="Wyślij Zapytanie o Audyt">
+                            <i class="fa-solid fa-paper-plane"></i> Submit Free Survey Request
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 py-12 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                
+                <!-- Col 1 -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-house-chimney-crack text-accent text-xl"></i>
+                        <span class="font-heading font-extrabold text-xl text-white">HYDRO-ROOF <span class="text-accent">LTD</span></span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed" data-en="Hydro-Roof Ltd is a registered specialist contractor in England & Wales providing BBA-certified liquid waterproofing and roofing systems." data-pl="Hydro-Roof Ltd to zarejestrowana firma dekarska w Anglii i Walii dostarczająca certyfikowane systemy hydroizolacji.">
+                        Hydro-Roof Ltd is a registered specialist contractor in England & Wales providing BBA-certified liquid waterproofing and roofing systems.
+                    </p>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h5 class="font-heading font-bold text-white text-base mb-4" data-en="Navigation" data-pl="Nawigacja">Navigation</h5>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#services" class="hover:text-accent-cyan transition" data-en="Services" data-pl="Usługi">Services</a></li>
+                        <li><a href="#estimator" class="hover:text-accent-cyan transition" data-en="Cost Estimator" data-pl="Kalkulator">Cost Estimator</a></li>
+                        <li><a href="#before-after" class="hover:text-accent-cyan transition" data-en="Transformations" data-pl="Metamorfozy">Transformations</a></li>
+                        <li><a href="#projects" class="hover:text-accent-cyan transition" data-en="Project Gallery" data-pl="Galeria">Project Gallery</a></li>
+                        <li><a href="#contact" class="hover:text-accent-cyan transition" data-en="Contact" data-pl="Kontakt">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h5 class="font-heading font-bold text-white text-base mb-4" data-en="London Postcodes Covered" data-pl="Obsługiwane Kody Pocztowe">London Postcodes Covered</h5>
+                    <p class="text-xs leading-relaxed text-slate-400" data-en="TW9, KT1, SW19, W8, W4, SW18, SW1X, W1, EC1, NW1 and all Greater London & Home Counties." data-pl="TW9, KT1, SW19, W8, W4, SW18, SW1X, W1, EC1, NW1 oraz cały Londyn.">
+                        TW9, KT1, SW19, W8, W4, SW18, SW1X, W1, EC1, NW1 and all Greater London & Home Counties.
+                    </p>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h5 class="font-heading font-bold text-white text-base mb-4" data-en="Standards & Insurance" data-pl="Standardy i Ubezpieczenie">Standards & Insurance</h5>
+                    <div class="flex flex-col gap-2 text-xs">
+                        <span class="bg-slate-900 border border-slate-800 px-3 py-2 rounded-lg text-slate-300 flex items-center gap-2"><i class="fa-solid fa-award text-accent-cyan"></i> BS 6229 & BS 5250 Compliant</span>
+                        <span class="bg-slate-900 border border-slate-800 px-3 py-2 rounded-lg text-slate-300 flex items-center gap-2"><i class="fa-solid fa-shield text-emerald-400"></i> £5,000,000 Public Liability</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="border-t border-slate-800/80 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 Hydro-Roof Ltd. All Rights Reserved. Company Registration No. 12948192.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:underline" data-en="Privacy Policy" data-pl="Polityka Prywatności">Privacy Policy</a>
+                    <a href="#" class="hover:underline" data-en="Terms of Service" data-pl="Regulamin">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal Dialog -->
+    <div id="successModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-slate-900 border border-slate-800 max-w-md w-full rounded-3xl p-8 text-center shadow-2xl relative">
+            <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center text-3xl mx-auto mb-4 border border-emerald-500/30">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h4 class="font-heading font-bold text-2xl text-white mb-2" data-en="Request Received!" data-pl="Otrzymaliśmy Zgłoszenie!">Request Received!</h4>
+            <p class="text-slate-300 text-sm mb-6" id="modalText" data-en="Thank you for contacting Hydro-Roof Ltd. A London roof specialist will contact you within 2 business hours." data-pl="Dziękujemy za kontakt z Hydro-Roof Ltd. Nasz dekarz skontaktuje się z Tobą w ciągu 2 godzin.">
+                Thank you for contacting Hydro-Roof Ltd. A London roof specialist will contact you within 2 business hours.
+            </p>
+            <button id="closeModalBtn" class="w-full bg-accent hover:bg-accent-hover text-white font-bold py-3 rounded-xl transition cursor-pointer" data-en="Close" data-pl="Zamknij">Close</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // 1. DYNAMIC LANGUAGE SWITCHER LOGIC
+            let currentLang = 'en';
+            const langToggleBtn = document.getElementById('langToggle');
+            const langLabel = document.getElementById('currentLangLabel');
+
+            langToggleBtn.addEventListener('click', function() {
+                currentLang = currentLang === 'en' ? 'pl' : 'en';
+                langLabel.textContent = currentLang.toUpperCase();
+                
+                // Update text content for elements with data-en / data-pl attributes
+                document.querySelectorAll('[data-en][data-pl]').forEach(el => {
+                    const newText = el.getAttribute(`data-${currentLang}`);
+                    if (newText) {
+                        el.textContent = newText;
+                    }
+                });
+            });
+
+            // 2. MOBILE MENU TOGGLE
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+                document.querySelectorAll('.mobile-link').forEach(link => {
+                    link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+                });
+            }
+
+            // 3. INTERACTIVE COST CALCULATOR LOGIC
+            let baseRate = 95;
+            let propertyMult = 1.0;
+            const slider = document.getElementById('calcAreaSlider');
+            const areaVal = document.getElementById('calcAreaVal');
+            const priceMin = document.getElementById('calcPriceMin');
+            const priceMax = document.getElementById('calcPriceMax');
+            const matShare = document.getElementById('calcMatShare');
+            const labShare = document.getElementById('calcLabShare');
+
+            function calculateRoofCost() {
+                if (!slider || !priceMin || !priceMax) return;
+                const area = parseInt(slider.value);
+                areaVal.textContent = area;
+
+                const baseTotal = area * baseRate * propertyMult;
+                const minCost = Math.round(baseTotal * 0.90);
+                const maxCost = Math.round(baseTotal * 1.15);
+
+                priceMin.textContent = minCost.toLocaleString();
+                priceMax.textContent = maxCost.toLocaleString();
+
+                matShare.textContent = '~ £' + Math.round(baseTotal * 0.45).toLocaleString();
+                labShare.textContent = '~ £' + Math.round(baseTotal * 0.40).toLocaleString();
+            }
+
+            // Service selector handlers
+            document.querySelectorAll('.calc-type-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.calc-type-btn').forEach(b => {
+                        b.classList.remove('active', 'border-accent', 'text-white');
+                        b.classList.add('border-slate-800', 'text-slate-300');
+                    });
+                    this.classList.add('active', 'border-accent', 'text-white');
+                    this.classList.remove('border-slate-800', 'text-slate-300');
+                    baseRate = parseFloat(this.getAttribute('data-rate'));
+                    calculateRoofCost();
+                });
+            });
+
+            // Property selector handlers
+            document.querySelectorAll('.calc-prop-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.calc-prop-btn').forEach(b => {
+                        b.classList.remove('active', 'border-accent', 'text-white');
+                        b.classList.add('border-slate-800', 'text-slate-400');
+                    });
+                    this.classList.add('active', 'border-accent', 'text-white');
+                    this.classList.remove('border-slate-800', 'text-slate-400');
+                    propertyMult = parseFloat(this.getAttribute('data-mult'));
+                    calculateRoofCost();
+                });
+            });
+
+            if (slider) {
+                slider.addEventListener('input', calculateRoofCost);
+                calculateRoofCost();
+            }
+
+            // 4. INTERACTIVE BEFORE/AFTER SLIDER LOGIC
+            const baContainer = document.getElementById('baContainer');
+            const baBeforeLayer = document.getElementById('baBeforeLayer');
+            const baBeforeImg = document.getElementById('baBeforeImg');
+            const baHandle = document.getElementById('baHandle');
+            let isDragging = false;
+
+            function syncSliderImageWidth() {
+                if (baContainer && baBeforeImg) {
+                    baBeforeImg.style.width = baContainer.offsetWidth + 'px';
+                }
+            }
+            window.addEventListener('resize', syncSliderImageWidth);
+            syncSliderImageWidth();
+
+            function setSliderPos(x) {
+                if (!baContainer) return;
+                const rect = baContainer.getBoundingClientRect();
+                let pos = x - rect.left;
+                if (pos < 0) pos = 0;
+                if (pos > rect.width) pos = rect.width;
+
+                const pct = (pos / rect.width) * 100;
+                if (baBeforeLayer) baBeforeLayer.style.width = pct + '%';
+                if (baHandle) baHandle.style.left = pct + '%';
+            }
+
+            if (baContainer) {
+                baContainer.addEventListener('mousedown', (e) => { isDragging = true; setSliderPos(e.clientX); });
+                window.addEventListener('mouseup', () => { isDragging = false; });
+                window.addEventListener('mousemove', (e) => { if (isDragging) setSliderPos(e.clientX); });
+
+                baContainer.addEventListener('touchstart', (e) => { isDragging = true; setSliderPos(e.touches[0].clientX); });
+                window.addEventListener('touchend', () => { isDragging = false; });
+                window.addEventListener('touchmove', (e) => { if (isDragging) setSliderPos(e.touches[0].clientX); });
+            }
+
+            // 5. PROJECT GALLERY FILTER TABS
+            const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active', 'bg-accent', 'text-white');
+                        b.classList.add('bg-slate-900', 'text-slate-300');
+                    });
+                    this.classList.add('active', 'bg-accent', 'text-white');
+                    this.classList.remove('bg-slate-900', 'text-slate-300');
+
+                    const filter = this.getAttribute('data-filter');
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.classList.contains(filter)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // 6. CONTACT FORM SUBMISSION MODAL
+            const contactForm = document.getElementById('contactForm');
+            const successModal = document.getElementById('successModal');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    if (successModal) successModal.classList.remove('hidden');
+                    contactForm.reset();
+                });
+            }
+
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', function() {
+                    if (successModal) successModal.classList.add('hidden');
+                });
+            }
+
+        });
+    </script>
+</body>
+</html>
